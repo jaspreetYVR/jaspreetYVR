@@ -1,21 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
+import { NativeBaseProvider, Tabs } from 'native-base';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import  Header  from './src/components/layouts/Header';
+import MoviesShowsContainer from './src/components/containers/MoviesShowsContainer';
+import AppStack from './src/components/stacks/AppStack';
+import TopTabs from './src/components/tabs/TopTabs';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <Header />
+        <AppStack />
+        <StatusBar style="auto" />
+    </NativeBaseProvider>
+    
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
